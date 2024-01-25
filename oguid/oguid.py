@@ -48,6 +48,17 @@ def webservice_to_email(id: str) -> str:
     result = webservice_to_caddie(id)
     return caddie_to_email(result)
 
+def guess_id_type(text: str) -> str:
+    if re.match(r'\b\d{2}[A-Z]{1,2}\d{4}\b', text) is not None:
+        result = "OGU-Caddie"
+    elif re.match(r'\b\d{2}[a-z]{,2}\d{4}@ogu\.ac\.jp\b', text) is not None:
+        result = "email"
+    elif re.match(r'\b\d{4}[A-Z]{,2} \d{4}\b', text) is not None:
+        result = "OGU Web Service"
+    else:
+        result = None
+    return result
+
 
 def _add_space(input_str: str) -> str:
     # 正規表現を使用して、英字と数字の間に半角スペースを挿入
