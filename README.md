@@ -8,6 +8,10 @@
 
 ## Usage
 
+```python
+import oguid
+```
+
 - `email_to_caddie(email: str)`
 - `email_to_webservice(email: str)`
 - `caddie_to_email(id: str)`
