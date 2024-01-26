@@ -3,6 +3,25 @@ OGU ID-email converter
 """
 import re
 
+def convert(source: str, target: str):
+    match (source, target):
+        case ("email", "caddie"):
+            func = email_to_caddie
+        case ("email", "web"):
+            func = email_to_webservice
+        case ("caddie", "email"):
+            func = caddie_to_email
+        case ("caddie", "web"):
+            func = caddie_to_webservice
+        case ("web", "email"):
+            func = webservice_to_email
+        case ("web", "caddie"):
+            func = webservice_to_caddie
+        case (_, _):
+            func = None
+        return func
+
+
 def email_to_caddie(email: str) -> str:
     """
     24e9999@ogu.ac.jp -> 24E9999
