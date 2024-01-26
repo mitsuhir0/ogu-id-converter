@@ -14,7 +14,3 @@
 - `caddie_to_email(id: str)`
 - `webservice_to_email(id: str)`
 - `webservice_to_caddie(id: str)`
-
-## Lisence
-
-see [LISENSE](./LISENSE)
