@@ -19,7 +19,8 @@ def convert(source: str, target: str):
             func = webservice_to_caddie
         case (_, _):
             func = None
-        return func
+
+    return func
 
 
 def email_to_caddie(email: str) -> str:
