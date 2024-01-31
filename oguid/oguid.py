@@ -45,9 +45,14 @@ def email_to_webservice(email: str) -> str:
 
 def caddie_to_webservice(id: str) -> str:
     """
-    24E9999 -> 2024E 9999
+    24E9999  -> 2024E 9999
+    24BA9999 -> 2024BA9999
     """
-    return _add_space("20" + id)
+    result = _add_space("20" + id)
+    if len(result) > 10:
+        return result.replace(" ", "")
+    else:
+        return result
 
 
 def caddie_to_email(id: str) -> str:
