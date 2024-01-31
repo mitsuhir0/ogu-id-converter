@@ -78,7 +78,7 @@ def guess_id_type(text: str) -> str:
         result = "OGU-Caddie"
     elif re.match(r'\b\d{2}[a-z]{,2}\d{4}@ogu\.ac\.jp\b', text) is not None:
         result = "email"
-    elif re.match(r'\b\d{4}[A-Z]{,2} \d{4}\b', text) is not None:
+    elif re.match(r'\b\d{4}[A-Z]{,2}(?:\s)?\d{4}\b', text) is not None:
         result = "OGU Web Service"
     else:
         result = None
